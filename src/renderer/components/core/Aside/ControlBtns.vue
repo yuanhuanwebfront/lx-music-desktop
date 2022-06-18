@@ -43,10 +43,10 @@ export default {
 @control-btn-height: 6%;
 .controlBtn {
   box-sizing: border-box;
-  padding: 0 7px;
+  padding: 20px 12px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   width: 100%;
   height: @control-btn-height;
   -webkit-app-region: no-drag;
@@ -74,6 +74,7 @@ export default {
   cursor: pointer;
   border-radius: 50%;
   color: @color-theme_2;
+  margin-right: 12px;
 
   &.min {
     background-color: @color-minBtn;

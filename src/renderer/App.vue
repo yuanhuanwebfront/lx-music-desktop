@@ -49,6 +49,7 @@ html, body {
 }
 
 body {
+  border-radius: 20px;
   user-select: none;
   height: 100vh;
   box-sizing: border-box;
@@ -70,7 +71,6 @@ body {
 }
 
 .transparent {
-  padding: @shadow-app;
   // #waiting-mask {
   //   border-radius: @radius-border;
   //   left: @shadow-app;
@@ -117,7 +117,8 @@ body {
 
 #left {
   flex: none;
-  width: @width-app-left;
+  width: 20%;
+  // width: @width-app-left;
 }
 #right {
   flex: auto;
