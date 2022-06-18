@@ -66,7 +66,7 @@ export default {
 each(@themes, {
   :global(#root.@{value}) {
     .aside {
-      background-color: ~'@{color-@{value}-theme-sidebar}';
+      background-color: #fff;
     }
     .logo {
       color: ~'@{color-@{value}-theme-font}';

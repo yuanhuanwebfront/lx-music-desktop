@@ -118,6 +118,7 @@ body {
 #left {
   flex: none;
   width: 20%;
+  border-right: 1px solid #e9edf6;
   // width: @width-app-left;
 }
 #right {
@@ -126,11 +127,8 @@ body {
   flex-flow: column nowrap;
   transition: background-color @transition-theme;
   background-color: @color-theme_2;
-
-  border-top-left-radius: @radius-border;
-  border-bottom-left-radius: @radius-border;
   overflow: hidden;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #e9edf6;
 }
 #toolbar, #player {
   flex: none;

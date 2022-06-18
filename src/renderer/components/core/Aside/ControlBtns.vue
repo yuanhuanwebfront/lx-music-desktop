@@ -43,7 +43,7 @@ export default {
 @control-btn-height: 6%;
 .controlBtn {
   box-sizing: border-box;
-  padding: 20px 12px;
+  padding: 27px 12px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
