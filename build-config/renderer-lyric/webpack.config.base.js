@@ -142,9 +142,9 @@ module.exports = {
       filename: isDev ? '[name].css' : '[name].[contenthash:8].css',
       chunkFilename: isDev ? '[id].css' : '[id].[contenthash:8].css',
     }),
-    new ESLintPlugin({
-      extensions: ['js', 'vue'],
-      formatter: require('eslint-formatter-friendly'),
-    }),
+    // new ESLintPlugin({
+    //   extensions: ['js', 'vue'],
+    //   formatter: require('eslint-formatter-friendly'),
+    // }),
   ],
 }

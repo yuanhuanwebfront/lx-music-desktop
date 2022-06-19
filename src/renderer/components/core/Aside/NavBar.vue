@@ -1,13 +1,10 @@
 <template>
 <div :class="$style.menu">
-  <ul :class="$style.list" role="toolbar">
+  <ul class="menu-ul" :class="$style.list" role="toolbar">
     <li v-for="item in menus" :key="item.to" :class="$style.navItem" role="presentation">
-      <router-link :class="$style.link" :active-class="$style.active" role="tab" :aria-selected="$route.name == item.to" :to="item.to" :aria-label="item.tips">
-        <div :class="$style.icon">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" :viewBox="item.iconSize" space="preserve">
-            <use :xlink:href="item.icon"></use>
-          </svg>
-        </div>
+      <router-link class="router-link" :class="$style.link" :active-class="$style.active" role="tab" :aria-selected="$route.name == item.to" :to="item.to" :aria-label="item.tips">
+        <i class="iconfont" :class="item.icon"></i>
+        <span>{{item.tips}}</span>
       </router-link>
     </li>
   </ul>
@@ -25,43 +22,37 @@ export default {
         {
           to: 'search',
           tips: this.$t('search'),
-          icon: '#icon-search-2',
-          iconSize: '0 0 425.2 425.2',
+          icon: 'icon-sousuo',
           enable: true,
         },
         {
           to: 'songList',
           tips: this.$t('song_list'),
-          icon: '#icon-album',
-          iconSize: '0 0 425.2 425.2',
+          icon: 'icon-gedan',
           enable: true,
         },
         {
           to: 'leaderboard',
           tips: this.$t('leaderboard'),
-          icon: '#icon-leaderboard',
-          iconSize: '0 0 425.22 425.2',
+          icon: 'icon-paihangbang',
           enable: true,
         },
         {
           to: 'list',
           tips: this.$t('my_list'),
-          icon: '#icon-love',
-          iconSize: '0 0 444.87 391.18',
+          icon: 'icon-geren',
           enable: true,
         },
         {
           to: 'download',
           tips: this.$t('download'),
-          icon: '#icon-download-2',
-          iconSize: '0 0 425.2 425.2',
+          icon: 'icon-download',
           enable: this.setting.download.enable,
         },
         {
           to: 'setting',
           tips: this.$t('setting'),
-          icon: '#icon-setting',
-          iconSize: '0 0 493.23 436.47',
+          icon: 'icon-setting',
           enable: true,
         },
       ].filter(m => m.enable)
@@ -75,13 +66,6 @@ export default {
 
 .menu {
   flex: auto;
-  // &.controlBtnLeft {
-  //   display: flex;
-  //   flex-flow: column nowrap;
-  //   justify-content: center;
-  //   padding-bottom: @control-btn-height;
-  // }
-  // padding: 5px;
 }
 .list {
   -webkit-app-region: no-drag;
@@ -89,87 +73,34 @@ export default {
   &:last-child {
     margin-bottom: 0;
   }
-  // dt {
-  //   padding-left: 5px;
-  //   font-size: 11px;
-  //   transition: @transition-theme;
-  //   transition-property: color;
-  //   color: @color-theme-font-label;
-  //   .mixin-ellipsis-1;
-  // }
 }
-.navItem {
-  position: relative;
-  &:before {
-    content: '';
-    display: block;
-    width: 100%;
-    padding-bottom: 84%;
-  }
-}
-.link {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  // display: block;
-  box-sizing: border-box;
-  text-decoration: none;
 
-  // padding: 18px 3px;
-  // margin: 5px 0;
-  // border-left: 5px solid transparent;
-  transition: @transition-theme;
-  transition-property: color;
-  color: @color-theme-font !important;
-  cursor: pointer;
-  font-size: 11.5px;
-  text-align: center;
-  outline: none;
+</style>
+
+<style>
+a.router-link{
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  transition: background-color 0.3s ease;
-  // border-radius: @radius-border;
-  .mixin-ellipsis-1;
-
-  &.active {
-    // border-left-color: @color-theme-active;
-    background-color: @color-theme-active;
-  }
-
-  &:hover:not(.active) {
-    background-color: @color-theme-hover;
-  }
-  &:hover:not(.active) {
-    background-color: @color-theme-active;
-  }
+  text-decoration: none;
+  transition: 0.5s;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 20px;
+  color: #6f778d;
+  border-bottom: 1px solid #f6f6f6;
 }
-
-.icon {
-  // margin-bottom: 5px;
-  &> svg {
-    width: 32%;
-  }
+a.router-link:hover{
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
-
-
-each(@themes, {
-  :global(#root.@{value}) {
-    .link {
-      color: ~'@{color-@{value}-theme-font}' !important;
-      &.active {
-        background-color: ~'@{color-@{value}-theme-active}';
-      }
-      &:hover:not(.active) {
-        background-color: ~'@{color-@{value}-theme-hover}';
-      }
-      &:active:not(.active) {
-        background-color: ~'@{color-@{value}-theme-active}';
-      }
-    }
-  }
-})
+a.router-link i{
+  margin-right: 20px;
+  font-size: 24px;
+}
+a.router-link i.icon-gedan{
+  font-size: 26px;
+}
+a.router-link::after{
+  width: 100%;
+}
 </style>

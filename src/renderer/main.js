@@ -2,6 +2,8 @@ import '../common/error'
 import { createApp } from 'vue'
 // import { sync } from 'vuex-router-sync'
 
+import './assets/font/iconfont.css';
+
 import './event'
 
 // Components
